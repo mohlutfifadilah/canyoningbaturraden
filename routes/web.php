@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\LoginController;
@@ -58,8 +59,8 @@ Route::middleware(['Auth'])->group(function(){
     // testimoni
     Route::resource('testimoni', TestimoniController::class);
 
-    // // testimoni
-    // Route::resource('carousel', CarouselController::class);
+    // carousel
+    Route::resource('carousel', CarouselController::class);
 
     // // invoice
     // Route::resource('invoice', InvoiceController::class);

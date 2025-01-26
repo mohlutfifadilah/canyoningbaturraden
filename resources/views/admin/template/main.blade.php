@@ -95,6 +95,7 @@
             "autoWidth": false,
             "responsive": true,
         });
+        bsCustomFileInput.init();
     });
     function confirmDelete(userId, what) {
         Swal.fire({
