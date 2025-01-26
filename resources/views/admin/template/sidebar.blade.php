@@ -55,7 +55,7 @@
           </li>
           <li class="nav-header">Website</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('carousel.index') }}" class="nav-link {{ Request::segment(1) === 'carousel' ? 'active' : '' }}">
               <i class="nav-icon fas fa-images"></i>
               <p>
                 Carousel

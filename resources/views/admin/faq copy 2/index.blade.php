@@ -1,6 +1,6 @@
 @extends('admin.template.main')
 
-@section('subject', 'Testimonial')
+@section('subject', 'FAQ')
 @section('content')
 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -9,13 +9,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Testimonial</h1>
+            <h1>FAQ</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
               <li class="breadcrumb-item active">Website</li>
-              <li class="breadcrumb-item active">Testimonial</li>
+              <li class="breadcrumb-item active">FAQ</li>
             </ol>
           </div>
         </div>
@@ -29,40 +29,38 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                {{-- <a href="{{ route('testimoni.create') }}" class="btn btn-success float-right"><i class="fa fa-plus"></i> &nbsp; Add</a> --}}
+                <a href="{{ route('faq.create') }}" class="btn btn-success float-right"><i class="fa fa-plus"></i> &nbsp; Add</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>From</th>
-                        <th>Message</th>
+                        <th>Question</th>
+                        <th>Answer</th>
                         <th>Option</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($testimoni as $t)
+                    @foreach ($faq as $f)
                         <tr>
-                            <td>{{ $t->name }}</td>
-                            <td>{{ $t->from }}</td>
-                            <td>{{ $t->message }}</td>
+                            <td>{{ $f->question }}</td>
+                            <td>{{ $f->answer }}</td>
                             <td>
                                 <div class="d-flex flex-wrap justify-content-center">
                                     {{-- Tombol Edit --}}
-                                    {{-- <a class="btn btn-sm btn-warning text-white mb-2 mb-md-0 me-md-2 mr-4"
-                                        href="{{ route('testimoni.edit', $t->id) }}">
+                                    <a class="btn btn-sm btn-warning text-white mb-2 mb-md-0 me-md-2 mr-4"
+                                        href="{{ route('faq.edit', $f->id) }}">
                                         <i class="fas fa-edit"></i> Edit
-                                    </a> --}}
+                                    </a>
 
                                     {{-- Tombol Hapus --}}
-                                    <form id="delete-form-{{ $t->id }}" action="{{ route('testimoni.destroy', $t->id) }}"
+                                    <form id="delete-form-{{ $f->id }}" action="{{ route('faq.destroy', $f->id) }}"
                                         method="post" class="mb-2 mb-md-0">
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-sm btn-danger"
-                                            onclick="confirmDelete({{ $t->id }}, 'Testimoni')">
+                                            onclick="confirmDelete({{ $f->id }}, 'FAQ')">
                                             <i class="fas fa-trash"></i> Delete
                                         </button>
                                     </form>

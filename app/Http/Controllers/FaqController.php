@@ -51,7 +51,7 @@ class FaqController extends Controller
         ]);
 
         if ($validator->fails()) {
-            Alert::alert('Kesalahan', 'Terjadi Kesalahan ', 'error');
+            Alert::alert('Error', "There's an error", 'error');
             return redirect()->back()->withErrors($validator)
                 ->withInput()->with(['status' => "There's an error", 'title' => 'Add FAQ', 'type' => 'error']);
         }
@@ -111,9 +111,9 @@ class FaqController extends Controller
         ]);
 
         if ($validator->fails()) {
-            Alert::alert('Kesalahan', 'Terjadi Kesalahan ', 'error');
+            Alert::alert('Error', "There's an error", 'error');
             return redirect()->back()->withErrors($validator)
-                ->withInput()->with(['status' => "There's an error", 'title' => 'Add FAQ', 'type' => 'error']);
+                ->withInput()->with(['status' => "There's an error", 'title' => 'Edit FAQ', 'type' => 'error']);
         }
 
         $faq->update([
@@ -121,7 +121,7 @@ class FaqController extends Controller
             'answer' => $request->answer,
         ]);
 
-        Alert::alert('Success', 'FAQ success edited ', 'success');
+        Alert::alert('Success', 'FAQ success edited', 'success');
         return redirect()->route('faq.index')->withSuccess('FAQ success edited');
     }
 
@@ -137,7 +137,7 @@ class FaqController extends Controller
         $faq = Faq::find($id);
         $faq->delete();
 
-        Alert::alert('Success', 'FAQ success deleted ', 'success');
+        Alert::alert('Success', 'FAQ success deleted', 'success');
         return redirect()->route('faq.index')->withSuccess('FAQ success deleted');
     }
 }

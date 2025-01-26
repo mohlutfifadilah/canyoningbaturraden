@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Testimoni;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TestimoniController extends Controller
 {
@@ -14,13 +17,8 @@ class TestimoniController extends Controller
     public function index()
     {
         //
-        // $testimoni = Testimoni::orderBy('created_at', 'desc')->get();
-        // $bintang = Testimoni::all()->map(function ($item) {
-        //     $item->filled = $item->bintang;
-        //     $item->notFilled = 5 - $item->bintang;
-        //     return $item;
-        // });
-        // return view('admin.testimoni.index', compact('testimoni'));
+        $testimoni = Testimoni::orderBy('created_at', 'desc')->get();
+        return view('admin.testimoni.index', compact('testimoni'));
     }
 
     /**
@@ -31,6 +29,7 @@ class TestimoniController extends Controller
     public function create()
     {
         //
+        return view('admin.testimoni.add');
     }
 
     /**
@@ -42,6 +41,31 @@ class TestimoniController extends Controller
     public function store(Request $request)
     {
         //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'from' => 'required',
+            'message' => 'required',
+        ],
+        [
+            'name.required' => 'Name required',
+            'from.required' => 'From required',
+            'message.required' => 'Message required',
+        ]);
+
+        if ($validator->fails()) {
+            Alert::alert('Error', "There's an error", 'error');
+            return redirect()->back()->withErrors($validator)
+                ->withInput()->with(['status' => "There's an error", 'title' => 'Add Testimonil', 'type' => 'error']);
+        }
+
+        Testimoni::create([
+            'name' => $request->name,
+            'from' => $request->from,
+            'message' => $request->message,
+        ]);
+
+        Alert::alert('Success', 'Testimonial success added', 'success');
+        return redirect()->route('testimoni.index')->withSuccess('Testimonial success added');
     }
 
     /**
@@ -64,6 +88,8 @@ class TestimoniController extends Controller
     public function edit($id)
     {
         //
+        $testimoni = Testimoni::find($id);
+        return view('admin.testimoni.edit', compact('testimoni'));
     }
 
     /**
@@ -76,6 +102,33 @@ class TestimoniController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $testimoni = Testimoni::find($id);
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'from' => 'required',
+            'message' => 'required',
+        ],
+        [
+            'name.required' => 'Name required',
+            'from.required' => 'From required',
+            'message.required' => 'Message required',
+        ]);
+
+        if ($validator->fails()) {
+            Alert::alert('Error', "There's an error", 'error');
+            return redirect()->back()->withErrors($validator)
+                ->withInput()->with(['status' => "There's an error", 'title' => 'Edit Testimonial', 'type' => 'error']);
+        }
+
+        $testimoni->update([
+            'name' => $request->name,
+            'from' => $request->from,
+            'message' => $request->message,
+        ]);
+
+        Alert::alert('Success', 'Testimonial success edited', 'success');
+        return redirect()->route('testimoni.index')->withSuccess('Testimonial success edited');
     }
 
     /**
@@ -87,5 +140,10 @@ class TestimoniController extends Controller
     public function destroy($id)
     {
         //
+        $testimoni = Testimoni::find($id);
+        $testimoni->delete();
+
+        Alert::alert('Success', 'Testimonial success deleted', 'success');
+        return redirect()->route('testimoni.index')->withSuccess('Testimonial success deleted');
     }
 }
