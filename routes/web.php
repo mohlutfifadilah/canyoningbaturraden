@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PackageController;
+use App\Http\Controllers\TestimoniController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,8 +40,8 @@ Route::middleware(['Auth'])->group(function(){
     // Route::get('/gantiPassword/{id}', [GantiPassword::class, 'change'])->name('change-password');
     // Route::put('/updatePassword/{id}', [GantiPassword::class, 'update'])->name('update-password');
 
-    // // users
-    // // Route::resource('user', UserController::class);
+    // Package
+    Route::resource('package', PackageController::class);
 
     // // mobil
     // Route::resource('mobil', MobilController::class);
@@ -46,14 +49,14 @@ Route::middleware(['Auth'])->group(function(){
     //     return response()->download(storage_path('app/brosur/' . $id));
     // })->name('download-brosur');
 
-    // // detail
-    // Route::resource('info_mobil', InfoMobilController::class);
+    // FAQ
+    Route::resource('faq', FaqController::class);
 
     // // varian
     // Route::resource('varian', VarianController::class);
 
-    // // testimoni
-    // Route::resource('testimoni', TestimoniController::class);
+    // testimoni
+    Route::resource('testimoni', TestimoniController::class);
 
     // // testimoni
     // Route::resource('carousel', CarouselController::class);

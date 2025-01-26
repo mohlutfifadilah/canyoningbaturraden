@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
       <img src="{{ asset('logo.png') }}" alt="CanyoningBaturraden Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> &nbsp; &nbsp;
-      <span class="brand-text font-weight-light">CanyoningBaturraden</span>
+      {{-- <span class="brand-text font-weight-light">CanyoningBaturraden</span> --}}
     </a>
 
     <!-- Sidebar -->
@@ -63,7 +63,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('faq.index') }}" class="nav-link {{ Request::segment(1) === 'faq' ? 'active' : '' }}">
               <i class="nav-icon fas fa-question"></i>
               <p>
                 FAQ
@@ -71,7 +71,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('testimoni.index') }}" class="nav-link {{ Request::segment(1) === 'testimoni' ? 'active' : '' }}">
               <i class="nav-icon fas fa-user-plus"></i>
               <p>
                 Testimonial
