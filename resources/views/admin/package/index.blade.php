@@ -47,7 +47,10 @@
                                 <tbody>
                                     @foreach ($package as $p)
                                     <tr>
-                                        <td>{{ $p->photo }}</td>
+                                        <td>
+                                            <img src="{{ asset('storage/photo-package/' . $p->photo) }}" alt="user-avatar" class="img-fluid" height="300" width="300"
+                                                id="profileImage" />
+                                        </td>
                                         <td>{{ $p->name }}</td>
                                         <td>{{ $p->location }}</td>
                                         <td>

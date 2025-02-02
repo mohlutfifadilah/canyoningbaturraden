@@ -255,7 +255,7 @@
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-success float-right"><i class="fas fa-plus"></i>
                                     &nbsp; Submit</button>
-                                <a href="/faq" class="btn btn-secondary float-right mr-4"><i class="fas fa-undo"></i>
+                                <a href="/package" class="btn btn-secondary float-right mr-4"><i class="fas fa-undo"></i>
                                     &nbsp; Cancel</a>
                             </div>
                         </form>

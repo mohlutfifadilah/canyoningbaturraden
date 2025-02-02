@@ -72,7 +72,7 @@
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-warning float-right text-white"><i class="fas fa-edit"></i>
                                     &nbsp; Submit</button>
-                                <a href="/faq" class="btn btn-secondary float-right mr-4"><i class="fas fa-undo"></i>
+                                <a href="/carousel" class="btn btn-secondary float-right mr-4"><i class="fas fa-undo"></i>
                                     &nbsp; Cancel</a>
                             </div>
                         </form>
