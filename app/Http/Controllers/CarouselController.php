@@ -47,7 +47,7 @@ class CarouselController extends Controller
                 'image' => 'mimes:jpeg,png,jpg|max:2048|required',
             ],
             [
-                'image.mimes' => "Format image is'nt not valid",
+                'image.mimes' => "Format image is'nt valid",
                 'image.max' => 'Image file max 2 mb',
                 'image.required' => 'Image file required',
             ]
@@ -130,7 +130,7 @@ class CarouselController extends Controller
                 'image' => 'mimes:jpeg,png,jpg|max:2048|required',
             ],
             [
-                'image.mimes' => "Format image is'nt not valid",
+                'image.mimes' => "Format image is'nt valid",
                 'image.max' => 'Image file max 2 mb',
                 'image.required' => 'Image file required',
             ]

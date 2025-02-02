@@ -46,13 +46,22 @@
           </li>
           <li class="nav-header">Package</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+<a href="{{ route('package.index') }}" class="nav-link {{ Request::segment(1) === 'package' ? 'active' : '' }}">
               <i class="nav-icon fas fa-box"></i>
               <p>
                 Package
               </p>
             </a>
           </li>
+<li class="nav-item">
+                <a href="{{ route('detailPackage.index') }}"
+                    class="nav-link {{ Request::segment(1) === 'detailPackage' ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-info-circle"></i>
+                    <p>
+                        Detail
+                    </p>
+                </a>
+            </li>
           <li class="nav-header">Website</li>
           <li class="nav-item">
             <a href="{{ route('carousel.index') }}" class="nav-link {{ Request::segment(1) === 'carousel' ? 'active' : '' }}">

@@ -55,7 +55,7 @@ class TestimoniController extends Controller
         if ($validator->fails()) {
             Alert::alert('Error', "There's an error", 'error');
             return redirect()->back()->withErrors($validator)
-                ->withInput()->with(['status' => "There's an error", 'title' => 'Add Testimonil', 'type' => 'error']);
+                ->withInput()->with(['status' => "There's an error", 'title' => 'Add Testimonial', 'type' => 'error']);
         }
 
         Testimoni::create([
