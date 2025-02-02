@@ -8,7 +8,7 @@
           <i class="far fa-user"></i> &nbsp; {{ Auth::user()->name }}
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <a href="#" class="dropdown-item">
+          <a href="{{ route('profil-edit', Auth::user()->id) }}" class="dropdown-item">
             <i class="fas fa-user mr-2"></i> Profile
           </a>
           <div class="dropdown-divider"></div>

@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('12345678'),
             'no_whatsapp' => 'test@example.com',
             'instagram' => 'test@example.com',
+            'tiktok' => 'test@example.com',
         ]);
     }
 }

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('no_whatsapp', 255);
             $table->string('instagram');
+            $table->string('tiktok');
             $table->rememberToken();
             $table->timestamps();
         });

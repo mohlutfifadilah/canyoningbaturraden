@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\CarouselController;
+use App\Http\Controllers\ChangePassword;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestimoniController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,11 +38,11 @@ Route::middleware(['Auth'])->group(function(){
     Route::get('/dashboard',  [DashboardController::class, 'index']);
 
     // # Profil
-    // Route::get('/profil-user/edit/{id}', [ProfilController::class, 'edit'])->name('profil-user-edit');
-    // Route::put('/profil-user/update/{id}', [ProfilController::class, 'update'])->name('profil-user-update');
+    Route::get('/profile/edit/{id}', [ProfileController::class, 'edit'])->name('profil-edit');
+    Route::put('/profile/update/{id}', [ProfileController::class, 'update'])->name('profil-update');
 
-    // Route::get('/gantiPassword/{id}', [GantiPassword::class, 'change'])->name('change-password');
-    // Route::put('/updatePassword/{id}', [GantiPassword::class, 'update'])->name('update-password');
+    Route::get('/changePassword/{id}', [ChangePassword::class, 'change'])->name('change-password');
+    Route::put('/changePassword/{id}', [ChangePassword::class, 'update'])->name('update-password');
 
     // Package
     Route::resource('package', PackageController::class);
