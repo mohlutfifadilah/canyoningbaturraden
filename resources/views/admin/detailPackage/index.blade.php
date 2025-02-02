@@ -1,6 +1,6 @@
 @extends('admin.template.main')
 
-@section('subject', 'Package')
+@section('subject', 'Detail')
 @section('content')
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -9,13 +9,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Package</h1>
+                    <h1>Detail</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
                         <li class="breadcrumb-item active">Package</li>
-                        <li class="breadcrumb-item active">Package</li>
+                        <li class="breadcrumb-item active">Detail</li>
                     </ol>
                 </div>
             </div>
@@ -28,44 +28,32 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">
-                            <a href="{{ route('package.create') }}" class="btn btn-success float-right"><i
+                        {{-- <div class="card-header">
+                            <a href="{{ route('detailPackage.create') }}" class="btn btn-success float-right"><i
                                     class="fa fa-plus"></i> &nbsp; Add</a>
-                        </div>
+                        </div> --}}
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Photo</th>
                                         <th>Package Name</th>
-                                        <th>Location</th>
-                                        <th>Additional</th>
+                                        <th>Min. Age</th>
+                                        <th>Opportunity</th>
                                         <th>Option</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($package as $p)
                                     <tr>
-                                        <td>
-                                            @if ($p->photo)
-                                                <img src="{{ asset('storage/photo-package/' . $p->photo) }}" alt="user-avatar" class="img-fluid" height="300"
-                                                    width="300" id="profileImage" />
-                                            @else
-                                                No Photos yet
-                                            @endif
-                                        </td>
                                         <td>{{ $p->name }}</td>
-                                        <td>{{ $p->location }}</td>
+                                        <td>{{ $p->min_age }}</td>
                                         <td>
                                             <ul>
-                                                <li>Canyoning Level : {{ $p->level }}</li>
-                                                <li>Experience Level : {{ $p->experience }}</li>
-                                                <li>Fitness : {{ $p->fitness }}</li>
-                                                <li>Swimming Abilities : {{ $p->swimming_abilities }}</li>
-                                                <li>Time in Canyon : {{ $p->time }}</li>
-                                                <li>Approach : {{ $p->approach }}</li>
-                                                <li>Return : {{ $p->return }}</li>
+                                                <li>Swing Change : {{ $p->swing_change }}</li>
+                                                <li>Jump Change : {{ $p->jump_change }}</li>
+                                                <li>Slide Change : {{ $p->slide_change }}</li>
+                                                <li>Swim Change : {{ $p->swim_change }}</li>
                                             </ul>
                                         </td>
                                         <td>
@@ -73,18 +61,25 @@
                                                 {{-- Tombol Edit --}}
                                                 <a
                                                     class="btn btn-sm btn-warning text-white mb-2 mb-md-0 me-md-2 mr-4"
-                                                    href="{{ route('package.edit', $p->id) }}">
+                                                    href="{{ route('detailPackage.edit', $p->id) }}">
                                                     <i class="fas fa-edit"></i> Edit
+                                                </a>
+
+                                                {{-- Tombol Info --}}
+                                                <a
+                                                    class="btn btn-sm btn-info text-white mb-2 mb-md-0 me-md-2 mr-4"
+                                                    href="{{ route('detailPackage.show', $p->id) }}">
+                                                    <i class="fas fa-info"></i> Info
                                                 </a>
 
                                                 {{-- Tombol Hapus --}}
                                                 <form id="delete-form-{{ $p->id }}"
-                                                    action="{{ route('package.destroy', $p->id) }}" method="post"
+                                                    action="{{ route('detailPackage.destroy', $p->id) }}" method="post"
                                                     class="mb-2 mb-md-0">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="button" class="btn btn-sm btn-danger"
-                                                        onclick="confirmDelete({{ $p->id }}, 'Package')">
+                                                        onclick="confirmDelete({{ $p->id }}, 'Detail Package')">
                                                         <i class="fas fa-trash"></i> Delete
                                                     </button>
                                                 </form>

@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+<!-- summernote -->
+<link rel="stylesheet" href="{{ asset('assets/plugins/summernote/summernote-bs4.min.css') }}">
   <!-- IonIcons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
@@ -57,7 +59,8 @@
 <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE -->
 <script src="{{ asset('assets/dist/js/adminlte.js') }}"></script>
-
+<!-- Summernote -->
+<script src="{{ asset('assets/plugins/summernote/summernote-bs4.min.js') }}"></script>
 <!-- OPTIONAL SCRIPTS -->
 <script src="{{ asset('assets/plugins/chart.js/Chart.min.js') }}"></script>
 
@@ -82,6 +85,13 @@
 
 <script>
     $(function () {
+        // Summernote
+        $('#include').summernote({
+            height: 250
+        });
+        $('#description').summernote({
+            height: 250
+        });
         $("#example1").DataTable({
             "responsive": true, "lengthChange": false, "autoWidth": false,
             // "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
@@ -96,6 +106,7 @@
             "responsive": true,
         });
         bsCustomFileInput.init();
+
     });
     function confirmDelete(userId, what) {
         Swal.fire({
