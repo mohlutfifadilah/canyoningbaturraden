@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\ChangePassword;
 use App\Http\Controllers\DashboardController;
@@ -7,8 +8,13 @@ use App\Http\Controllers\DetailController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\PackageTourController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestimoniController;
+use App\Models\Carousel;
+use App\Models\Package;
+use App\Models\Testimoni;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +29,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('main');
+    $user = User::find(1);
+    $carousel = Carousel::all();
+    $package = Package::all();
+    $testimonial = Testimoni::all();
+    return view('main', compact(
+        'user',
+        'carousel',
+        'package',
+        'testimonial',
+    ));
+});
+Route::get('/package-tour', [PackageTourController::class, 'index']);
+Route::get('/about', [AboutController::class, 'index']);
+Route::get('/faqs', function () {
+    return view('faqs');
+});
+Route::get('/contact', function () {
+    return view('contact');
 });
 
 Route::get('/login', [LoginController::class, 'index']);
