@@ -63,7 +63,7 @@
                                     @endif
                                     <br>
                                     <small class="text-muted text-danger">
-                                        * Dimension : 1600 x 670 <br>
+                                        * Dimension : 433 x 577 <br>
                                         * Max size 2mb (jpeg, jpg, png) <br>
                                     </small>
                                 </div>

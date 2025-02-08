@@ -30,8 +30,8 @@ return new class extends Migration
             $table->string('jump_change')->nullable();
             $table->string('slide_change')->nullable();
             $table->string('swim_change')->nullable();
-            $table->string('include', 255)->nullable();
-            $table->string('description', 255)->nullable();
+            $table->longText('include')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

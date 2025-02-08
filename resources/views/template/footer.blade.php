@@ -1,27 +1,29 @@
 <footer class="footer text-center">
-    <div class="row justify-content-center my-3">
-        <div class="col-md-4">
+    <div class="row my-3">
+        {{-- <div class="col-md-4">
             <h5 class="font-weight-bold">Member Of</h5>
             <img src="logo1.png" alt="Logo 1" class="img-fluid">
+        </div> --}}
+        <div class="col-md-6">
+            <p class="text-center" style="color: #41AB5D;">Affiliate with</p>
+            <img src="{{ asset('assets/img/aci.jpeg') }}" alt="Logo 2" class="img-fluid mr-5" width="100" height="100">
+            <img src="{{ asset('assets/img/aci.jpeg') }}" alt="Logo 2" class="img-fluid" width="100" height="100">
         </div>
-        <div class="col-md-4">
-            <h5 class="font-weight-bold">Affiliate with</h5>
-            <img src="logo2.png" alt="Logo 2" class="img-fluid">
-        </div>
-        <div class="col-md-4">
-            <h5 class="font-weight-bold">Social Media</h5>
-            <img src="logo3.png" alt="Logo 3" class="img-fluid">
+        <div class="col-md-6">
+            <p class="text-center" style="color: #41AB5D;">Social Media</p>
+            <div class="container d-flex justify-content-center align-items-center">
+                <div class="social-icons">
+                    <a href="https://wa.me/6282225133909" target="_blank" rel="noopener noreferrer" class="social-icon text-decoration-none whatsapp"><ion-icon name="logo-whatsapp"></ion-icon></a>
+                    <a href="https://www.instagram.com/canyoningbaturraden/" target="_blank" rel="noopener noreferrer" class="social-icon text-decoration-none instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="https://www.tiktok.com/@canyoningbaturraden?lang=en" target="_blank" rel="noopener noreferrer" class="social-icon text-decoration-none tiktok"><ion-icon name="logo-tiktok"></ion-icon></a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <p>Copyright © 2025 - Canyoning Bali ID</p>
-    <p>
-        <a href="#">Safety</a> | <a href="#">Term And Condition</a>
-    </p>
-
-    <div class="social-icons">
-        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="tripadvisor"><i class="fab fa-tripadvisor"></i></a>
-    </div>
+    <small class="mt-5">Copyright © 2025 - Canyoning Baturraden</small>
+    <br>
+    <small>
+        <a href="/safety">Safety</a> | <a href="/tac">Term And Condition</a>
+    </small>
 </footer>

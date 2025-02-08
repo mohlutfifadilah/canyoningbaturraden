@@ -12,7 +12,9 @@
     <style>
         *{
             font-family: 'Konkhmer Sleokchher', sans-serif;
-
+        }
+        h1, h2, h3, h4, h5{
+            color: #41AB5D;
         }
         .full-screen {
             background-size: cover;
@@ -56,9 +58,7 @@
         }
 
         .adventage {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+            background-color: #93d1a4;
         }
 
         .card {
@@ -69,11 +69,10 @@
         }
 
         .parallax-window {
-            min-height: 400px;
-            background: transparent;
+            min-height: 250px;
         }
 
-        .carousel-item::after {
+        .carousel-item.main::after {
             content: "";
             position: absolute;
             top: 0;
@@ -85,9 +84,55 @@
             z-index: 1;
         }
 
-        .carousel-item img {
+        .carousel-item.main img {
             position: relative;
             z-index: 0;
+        }
+        .package .card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Warna hitam dengan transparansi */
+            z-index: 1;
+        }
+
+        .social-icons {
+        display: flex;
+        gap: 30px;
+        }
+
+        .social-icon {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-size: 25px;
+        text-decoration: none;
+        color: white;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .instagram {
+        background-color: #e1306c;
+        }
+
+        .whatsapp {
+        background-color: #53b347;
+        }
+
+        .tiktok {
+        background-color: black;
+        }
+
+        .social-icon:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        color: none;
         }
     </style>
 </head>
@@ -102,6 +147,8 @@
     @yield('script')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 </body>

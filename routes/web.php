@@ -33,11 +33,13 @@ Route::get('/', function () {
     $carousel = Carousel::all();
     $package = Package::all();
     $testimonial = Testimoni::all();
+    $count_package = Package::all()->count();
     return view('main', compact(
         'user',
         'carousel',
         'package',
         'testimonial',
+        'count_package',
     ));
 });
 Route::get('/package-tour', [PackageTourController::class, 'index']);
