@@ -12,6 +12,7 @@ use App\Http\Controllers\PackageTourController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestimoniController;
 use App\Models\Carousel;
+use App\Models\Faq;
 use App\Models\Package;
 use App\Models\Testimoni;
 use App\Models\User;
@@ -43,12 +44,20 @@ Route::get('/', function () {
     ));
 });
 Route::get('/package-tour', [PackageTourController::class, 'index']);
+Route::get('/package-tour/detail/{id}', [PackageTourController::class, 'detail'])->name('package-tour-detail');
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/faqs', function () {
-    return view('faqs');
+    $faq = Faq::all();
+    return view('faqs', compact('faq'));
 });
 Route::get('/contact', function () {
     return view('contact');
+});
+Route::get('/safety', function () {
+    return view('safety');
+});
+Route::get('/term', function () {
+    return view('term');
 });
 
 Route::get('/login', [LoginController::class, 'index']);

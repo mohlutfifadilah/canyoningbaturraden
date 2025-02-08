@@ -3,15 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
     <link rel="icon" type="image/png" href="{{ asset('logo.png') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://fonts.cdnfonts.com/css/konkhmer-sleokchher" rel="stylesheet">
     <style>
         *{
             font-family: 'Konkhmer Sleokchher', sans-serif;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
         }
         h1, h2, h3, h4, h5{
             color: #41AB5D;
@@ -22,8 +27,17 @@
             background-repeat: no-repeat;
         }
 
+        .navbar-child {
+            width: 100%;
+            background: #41AB5D;
+            transition: all 0.4s ease-in-out;
+            padding: 20px 0;
+            z-index: 1050;
+            /* Tambahkan ini */
+        }
+
         /* --- Navbar awal transparan & absolute --- */
-        .navbar {
+        .navbar.navbar-main {
             position: absolute;
             width: 100%;
             background: transparent;
@@ -39,7 +53,7 @@
         }
 
         /* --- Saat di-scroll, navbar berubah menjadi fixed --- */
-        .navbar.scrolled {
+        .navbar.scrolled.navbar-main {
             position: fixed;
             top: 0;
             width: 100%;
@@ -49,7 +63,11 @@
         }
 
         /* --- Logo mengecil saat scroll --- */
-        .navbar.scrolled .navbar-brand img {
+        .navbar.scrolled.navbar-main .navbar-brand img {
+            width: 60px;
+        }
+
+        .navbar-child .navbar-brand img {
             width: 60px;
         }
 
@@ -72,6 +90,10 @@
             min-height: 250px;
         }
 
+        .parallax-section {
+            overflow: hidden;
+        }
+
         .carousel-item.main::after {
             content: "";
             position: absolute;
@@ -85,8 +107,9 @@
         }
 
         .carousel-item.main img {
-            position: relative;
-            z-index: 0;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
         }
         .package .card:before {
             content: "";
@@ -98,7 +121,9 @@
             background: rgba(0, 0, 0, 0.5); /* Warna hitam dengan transparansi */
             z-index: 1;
         }
-
+        .container-fluid.package {
+            overflow-x: hidden;
+        }
         .social-icons {
         display: flex;
         gap: 30px;
@@ -134,6 +159,31 @@
         box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
         color: none;
         }
+
+        .myaccordion {
+        box-shadow: 0 0 1px rgba(0,0,0,0.1);
+        }
+
+        .myaccordion .card,
+        .myaccordion .card:last-child .card-header {
+        border: none;
+        }
+
+        .myaccordion .fa-stack {
+        font-size: 18px;
+        }
+
+        .myaccordion .btn {
+        width: 100%;
+        color: #41AB5D;
+        padding: 0;
+        }
+
+        .myaccordion .btn-link:hover,
+        .myaccordion .btn-link:focus {
+        text-decoration: none;
+        }
+
     </style>
 </head>
 

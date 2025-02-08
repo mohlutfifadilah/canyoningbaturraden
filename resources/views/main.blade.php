@@ -1,35 +1,37 @@
 @extends('template.main')
 @section('title', 'Canyoning Baturraden')
 @section('content')
-<!-- Konten utama -->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        @foreach ($carousel as $index => $item)
-            <li data-target="#carouselExampleIndicators" data-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}"></li>
-        @endforeach
-    </ol>
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-        @foreach ($carousel as $index => $item)
+<div class="container-fluid p-0">
+    <!-- Konten utama -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            @foreach ($carousel as $index => $item)
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{ $index }}"
+                class="{{ $index === 0 ? 'active' : '' }}"></li>
+            @endforeach
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            @foreach ($carousel as $index => $item)
             <div class="carousel-item main {{ $index === 0 ? 'active' : '' }}">
-                <img class="d-block w-100"
-                    src="{{ asset('storage/carousel/' . $item->image) }}" alt="">
+                <img class="d-block w-100" src="{{ asset('storage/carousel/' . $item->image) }}" alt="">
                 {{-- <div class="carousel-caption d-md-block">
                     <h5>First Image</h5>
                 </div> --}}
             </div>
-        @endforeach
+            @endforeach
+        </div>
+        <!-- Controls -->
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-    <!-- Controls -->
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
 </div>
 <div class="container mb-5">
     <h1 class="text-center mt-5">About</h1>
@@ -51,22 +53,22 @@
     </div>
 </div>
 <div class="container-fluid adventage">
-    <div class="row p-5 text-white">
-        <div class="col-md-3 text-center">
+    <div class="row p-5 text-white text-center">
+        <div class="col-6 col-md-3">
             <h1 class="text-white"><ion-icon name="accessibility"></ion-icon> 150+</h1>
-            <small>Participants have tried this</small>
+            <p>Participants have tried this</p>
         </div>
-        <div class="col-md-3 text-center">
+        <div class="col-6 col-md-3">
             <h1 class="text-white"><ion-icon name="happy"></ion-icon> 100+</h1>
-            <small>Delightful testimony</small>
+            <p>Delightful testimony</p>
         </div>
-        <div class="col-md-3 text-center">
+        <div class="col-6 col-md-3">
             <h1 class="text-white"><ion-icon name="file-tray-stacked"></ion-icon> {{ $count_package }}</h1>
-            <small>Frequently package</small>
+            <p>Frequently package</p>
         </div>
-        <div class="col-md-3 text-center">
+        <div class="col-6 col-md-3">
             <h1 class="text-white"><ion-icon name="people-circle"></ion-icon> 10</h1>
-            <small>Experienced coach</small>
+            <p>Experienced coach</p>
         </div>
     </div>
 </div>
@@ -172,8 +174,6 @@
         </div>
     </div>
 </div>
-
-<hr class="mt-0 pt-0" style="border: #41AB5D 1px solid;">
 @endsection
 @section('script')
 <script>
@@ -194,19 +194,11 @@
     });
     // Menambahkan class 'scrolled' saat user scroll
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 50) {
-            $('#navbar').addClass('scrolled');
+        if ($(this).scrollTop() > 20) {
+            $('#navbar-main').addClass('scrolled');
         } else {
-            $('#navbar').removeClass('scrolled');
+            $('#navbar-main').removeClass('scrolled');
         }
-    });
-    $(document).ready(function(){
-        $('.slick-testimonial').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 4000,
-        });
     });
 </script>
 @endsection
