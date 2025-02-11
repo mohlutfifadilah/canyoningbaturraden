@@ -64,6 +64,7 @@ class ProfileController extends Controller
                 return redirect()->back()->withInput()->with('no_whatsapp', 'No Whatsapp already in use!');
             }
         }
+        
 
         $user->update([
             'name' => $request->name,

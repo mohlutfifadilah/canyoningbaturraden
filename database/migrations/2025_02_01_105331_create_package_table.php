@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('package', function (Blueprint $table) {
             $table->id();
-            $table->string('photo')->nullable();
             $table->string('name');
             $table->string('location');
             $table->string('level');

@@ -45,7 +45,6 @@ class PackageController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'photo' => 'nullable|file|mimes:jpeg,png,jpg|max:2048',
                 'name' => 'required',
                 'location' => 'required',
                 'level' => 'required',
@@ -55,10 +54,9 @@ class PackageController extends Controller
                 'time' => 'required',
                 'approach' => 'required',
                 'return' => 'required',
+                'price' => 'required',
             ],
             [
-                'photo.mimes' => "Format Photo is'nt not valid",
-                'photo.max' => 'Photo file max 2 mb',
                 'name.required' => 'Package Name required',
                 'location.required' => 'Location required',
                 'level.required' => 'Canyoning Level required',
@@ -68,6 +66,7 @@ class PackageController extends Controller
                 'time.required' => 'Time in Canyon required',
                 'approach.required' => 'Approach required',
                 'return.required' => 'Return required',
+                'price.required' => 'Price required',
             ]
         );
         if ($validator->fails()) {
@@ -76,21 +75,7 @@ class PackageController extends Controller
                 ->withInput()->with(['status' => "There's an error", 'title' => 'Add Package', 'type' => 'error']);
         }
 
-        if ($request->file('photo')) {
-            $file = $request->file('photo');
-            $image = $request->file('photo')->store('photo-package');
-            $file->move('storage/photo-package/', $image);
-            $image = str_replace('photo-package/', '', $image);
-            // if($profil->foto){
-            //     unlink(storage_path('app/kegiatan/' . $profil->nama . '/' . $profil->foto));
-            //     unlink(public_path('storage/kegiatan/' . $profil->nama . '/' . $profil->foto));
-            // }
-        } else {
-            $image = null;
-        }
-
         Package::create([
-            'photo' => $image,
             'name' => $request->name,
             'location' => $request->location,
             'level' => $request->level,
@@ -100,6 +85,7 @@ class PackageController extends Controller
             'time' => $request->time,
             'approach' => $request->approach,
             'return' => $request->return,
+            'price' => $request->price,
         ]);
 
         Alert::alert('Success', 'Package success added', 'success');
@@ -144,7 +130,6 @@ class PackageController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'photo' => 'nullable|file|mimes:jpeg,png,jpg|max:2048',
                 'name' => 'required',
                 'location' => 'required',
                 'level' => 'required',
@@ -154,10 +139,9 @@ class PackageController extends Controller
                 'time' => 'required',
                 'approach' => 'required',
                 'return' => 'required',
+                'price' => 'required',
             ],
             [
-                'photo.mimes' => "Format Photo is'nt not valid",
-                'photo.max' => 'Photo file max 2 mb',
                 'name.required' => 'Package Name required',
                 'location.required' => 'Location required',
                 'level.required' => 'Canyoning Level required',
@@ -167,6 +151,7 @@ class PackageController extends Controller
                 'time.required' => 'Time in Canyon required',
                 'approach.required' => 'Approach required',
                 'return.required' => 'Return required',
+                'price.required' => 'Price required',
             ]
         );
         if ($validator->fails()) {
@@ -175,29 +160,7 @@ class PackageController extends Controller
                 ->withInput()->with(['status' => "There's an error", 'title' => 'Edit Package', 'type' => 'error']);
         }
 
-        if ($request->file('photo')) {
-            // Ambil ukuran file dalam bytes
-            $fileSize = $request->file('photo')->getSize();
-
-            // Periksa apakah ukuran file melebihi batas maksimum (2 MB)
-            if ($fileSize > 2 * 1024 * 1024) {
-                // File terlalu besar, kembalikan respons dengan pesan kesalahan
-                return redirect()->back()->with('photo', 'Photo file max 2 mb');
-            }
-            $file = $request->file('photo');
-            $image = $request->file('photo')->store('photo-package');
-            $file->move('storage/photo-package/', $image);
-            $image = str_replace('photo-package/', '', $image);
-            if ($package->photo) {
-                unlink(storage_path('app/photo-package/' . $package->photo));
-                unlink(public_path('storage/photo-package/' . $package->photo));
-            }
-        } else {
-            $image = $package->photo;
-        }
-
         $package->update([
-            'photo' => $image,
             'name' => $request->name,
             'location' => $request->location,
             'level' => $request->level,
@@ -207,6 +170,7 @@ class PackageController extends Controller
             'time' => $request->time,
             'approach' => $request->approach,
             'return' => $request->return,
+            'price' => $request->price,
         ]);
 
         Alert::alert('Success', 'Package success edited', 'success');
@@ -225,10 +189,10 @@ class PackageController extends Controller
         $package = Package::find($id);
         // Hapus semua varian yang terkait dengan id_mobil
         // Varian::where('id_mobil', $id)->delete();
-        if ($package->photo) {
-            unlink(storage_path('app/photo-package/' . $package->photo));
-            unlink(public_path('storage/photo-package/' . $package->photo));
-        }
+        // if ($package->photo) {
+        //     unlink(storage_path('app/photo-package/' . $package->photo));
+        //     unlink(public_path('storage/photo-package/' . $package->photo));
+        // }
         $package->delete();
 
         Alert::alert('Success', 'Package success deleted', 'success');

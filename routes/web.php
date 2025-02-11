@@ -3,12 +3,14 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\ChangePassword;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PackageTourController;
+use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestimoniController;
 use App\Models\Carousel;
@@ -32,7 +34,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $user = User::find(1);
     $carousel = Carousel::all();
-    $package = Package::all();
+    $package = Package::limit(3)->get();
     $testimonial = Testimoni::all();
     $count_package = Package::all()->count();
     return view('main', compact(
@@ -53,6 +55,8 @@ Route::get('/faqs', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::post('contact-us', [ContactController::class, 'store'])->name('contact.us.store');
+
 Route::get('/safety', function () {
     return view('safety');
 });
@@ -80,6 +84,7 @@ Route::middleware(['Auth'])->group(function(){
 
     // Package
     Route::resource('package', PackageController::class);
+    Route::resource('photo', PhotoController::class);
     Route::resource('detailPackage', DetailController::class);
 
     // // mobil

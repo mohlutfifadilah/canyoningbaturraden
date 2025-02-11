@@ -18,9 +18,7 @@
             <p class="text-justify">
                 All our Instructors and Guides at Canyoning Baturraden are very passionate of canyoning activities and in outdoor sports, with
                 high skill and experienced in the field. Our Instructor and Guide is certified by Association Canyoning Indonesia (ACI),
-                and Some of our instructors held the Trainer level of International canyoning organization for Professional (ICOPro),
-                Master instructor From Federation of Indonesia speleological Activity (FINSPAC), and also certified by National
-                Professional Certification Agency for ecotourism as Assesor.
+                Chief instructor From Federation of Indonesia speleological Activity (FINSPAC), CEO Rope Free Indonesia as Caving Technique Education and also certified by National Professional Certification Agency for ecotourism as Assesor.
             </p>
             <h5>Equipment</h5>
             <p class="text-justify">

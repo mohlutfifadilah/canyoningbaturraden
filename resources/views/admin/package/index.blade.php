@@ -37,7 +37,6 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Photo</th>
                                         <th>Package Name</th>
                                         <th>Location</th>
                                         <th>Additional</th>
@@ -47,15 +46,7 @@
                                 <tbody>
                                     @foreach ($package as $p)
                                     <tr>
-                                        <td>
-                                            @if ($p->photo)
-                                                <img src="{{ asset('storage/photo-package/' . $p->photo) }}" alt="user-avatar" class="img-fluid" height="300"
-                                                    width="300" id="profileImage" />
-                                            @else
-                                                No Photos yet
-                                            @endif
-                                        </td>
-                                        <td>{{ $p->name }} <br> ({{ $p->price }})</td>
+                                        <td>{{ $p->name }} | {{ $p->price }}</td>
                                         <td>{{ $p->location }}</td>
                                         <td>
                                             <ul>

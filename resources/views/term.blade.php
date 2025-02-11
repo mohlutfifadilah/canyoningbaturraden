@@ -28,12 +28,13 @@
             <h5>Term and Condition</h5>
             <h6>1. Payments</h6>
             <p class="text-justify">
-                The payment can be done by:
-                Cash (Indonesian Rupiah).
-                Bank Transfer: Bank Mandiri, An. CV. Canyoning Baturraden Lestari (contact us for account number)
-                Credit Card (Visa, Master Card).
+                The payment can be done by fill the Google Form and transfer payment with send the bank tranfer receipt : <br>
+                <ul>
+                    <li>Cash (Indonesian Rupiah).</li>
+                    <li>Bank Transfer: Bank Mandiri (contact us for account number).</li>
+                </ul>
             </p>
-            <h5>2. Cancellation</h5>
+            <h6>2. Cancellation</h6>
             <p class="text-justify">
                 If there is cancellation from customer should be inform 24-hour before the day of the tour, and should be informed as
                 soon as possible through calling at the booking numbers.
@@ -43,10 +44,10 @@
                 safety purposes and will informed immediately.
                 <br>
                 Deposits will be forfeited upon cancellation. All cancellations and/or reductions in numbers should be notified as soon
-                as possible by email. Any cancellations within the 14 day period prior to the activity date will result in the group
+                as possible by email or whatsapp messanger. Any cancellations within the 14 day period prior to the activity date will result in the group
                 leader being held liable for the full cost of the cancelled activity or reduction.
             </p>
-            <h5>3. Insurance and Safety</h5>
+            <h6>3. Insurance and Safety</h6>
             <p class="text-justify">
                 Canyoning Baturraden have full public liability insurance. It is the nature of adventurous activities that there will always
                 be some degree of risk. Our insurance does not cover you for inherent risks or client negligence. Whilst not mandatory
@@ -54,18 +55,18 @@
                 your own safety it is imperative that you abide by the decisions of our Instructors/Guide. We reserve the right to make
                 changes to planned routes and venues as a result of adverse or impending conditions.
             </p>
-            <h5>4. Alcohol and Drugs</h5>
+            <h6>4. Alcohol and Drugs</h6>
             <p class="text-justify">
                 Canyoning Baturraden also reserves the right to refuse participation to clients that they believe to be under the influence of
                 alcohol or drugs and in such circumstances no refunds shall be given.
             </p>
-            <h5>5. Parental Consent</h5>
+            <h6>5. Parental Consent</h6>
             <p class="text-justify">
                 It is a legal requirement for anyone under the age of 16 years to have parental consent. Parental consent forms are
                 available in email format on request or can be downloaded and must be completed prior to joining us on any activity,
                 unless the parent is taking part in the activity with them.
             </p>
-            <h5>6. Privacy Policy</h5>
+            <h6>6. Privacy Policy</h6>
             <p class="text-justify">
                 Canyoning Baturraden maintains the privacy of all messages and does not transfer personal information to any third party. This
                 email and any files transmitted with it are confidential and intended solely for the use of the individual or entity to

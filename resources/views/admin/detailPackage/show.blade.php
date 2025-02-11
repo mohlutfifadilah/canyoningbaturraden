@@ -72,12 +72,12 @@
                                     </dl>
                                 </div>
                                 <div class="col-md-6">
-                                    <dl>
+                                    {{-- <dl>
                                         <dt>Include</dt>
                                         <dd>
                                             {!! $package->include !!}
                                         </dd>
-                                    </dl>
+                                    </dl> --}}
                                 </div>
                             </div>
                             <hr>

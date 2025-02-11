@@ -28,9 +28,9 @@
         <div class="row">
           <div class="col-12">
             <div class="card">
-              {{-- <div class="card-header">
+              <div class="card-header">
                 <a href="{{ route('testimoni.create') }}" class="btn btn-success float-right"><i class="fa fa-plus"></i> &nbsp; Add</a>
-              </div> --}}
+              </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">

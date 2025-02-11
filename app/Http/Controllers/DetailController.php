@@ -83,11 +83,11 @@ class DetailController extends Controller
             $request->all(),
             [
                 'min_age' => 'required',
-                'include' => 'required',
+                // 'include' => 'required',
             ],
             [
                 'min_age.required' => 'Minimum Age required',
-                'include.required' => 'Include required',
+                // 'include.required' => 'Include required',
             ]
         );
         if ($validator->fails()) {
@@ -102,7 +102,7 @@ class DetailController extends Controller
             'jump_change' => $request->jump_change,
             'slide_change' => $request->slide_change,
             'swim_change' => $request->swim_change,
-            'include' => $request->include,
+            // 'include' => $request->include,
             'description' => $request->description,
         ]);
 

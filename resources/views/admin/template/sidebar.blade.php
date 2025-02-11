@@ -53,7 +53,16 @@
               </p>
             </a>
           </li>
-<li class="nav-item">
+            <li class="nav-item">
+                <a href="{{ route('photo.index') }}"
+                    class="nav-link {{ Request::segment(1) === 'photo' ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-images"></i>
+                    <p>
+                        Photo
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="{{ route('detailPackage.index') }}"
                     class="nav-link {{ Request::segment(1) === 'detailPackage' ? 'active' : '' }}">
                     <i class="nav-icon fas fa-info-circle"></i>

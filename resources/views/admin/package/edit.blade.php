@@ -41,32 +41,6 @@
                             @csrf
                             @method('PUT')
                             <div class="card-body">
-                                <div class="form-group">
-                                    <label for="photo">Photo</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file"
-                                                class="custom-file-input @if(session('photo')) is-invalid @endif @error('photo') is-invalid @enderror"
-                                                id="photo" name="photo">
-                                            <label class="custom-file-label" for="photo">Choose file</label>
-                                        </div>
-                                    </div>
-                                    @error('photo')
-                                    <small id="photo" class="text-danger">
-                                        {{ $message }}
-                                    </small>
-                                    @enderror
-                                    @if (session('photo'))
-                                    <small id="photo" class="text-danger">
-                                        {{ session('photo') }}
-                                    </small>
-                                    @endif
-                                    <br>
-                                    <small class="text-muted text-danger">
-                                        * Dimension : 1067 x 755 <br>
-                                        * Max size 2mb (jpeg, jpg, png) <br>
-                                    </small>
-                                </div>
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">

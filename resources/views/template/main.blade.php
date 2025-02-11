@@ -188,6 +188,7 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
     @include('template.nav')
 
     @yield('content')

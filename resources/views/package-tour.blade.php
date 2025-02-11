@@ -7,7 +7,7 @@
         <div class="col-md-4 mb-1">
             <div class="card mb-0" style="background-image: url('{{ asset('assets/img/background.jpg') }}');">
                 <div class="card-body" style="z-index: 2;">
-                    <h1 class="card-title">{{ $p->name }}</h1>
+                    <h2 class="card-title">{{ $p->name }}</h2>
                     <hr style="border: red 1px solid;">
                     <p class="card-text text-white"><b>Location:</b> {{ $p->location }}</p>
                     <p class="card-text text-white"><b>Level:</b> {{ $p->level }}</p>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="row">
                         @if ($p->swing_change)
-                        <div class="col-md-3 m-0 p-0">
+                        <div class="col-md-3 m-0 p-0 border-right border-success">
                             <img src="{{ asset('assets/img/swing.png') }}" class="img-fluid mb-3" alt="Responsive image"
                                 style="width: 50px; height: 50px;"> <br>
                             <small class="card-text mt-5 text-white">
@@ -39,7 +39,7 @@
                         </div>
                         @endif
                         @if ($p->jump_change)
-                        <div class="col-md-3 m-0 p-0">
+                        <div class="col-md-3 m-0 p-0 border-right border-success">
                             <img src="{{ asset('assets/img/jump.png') }}" class="img-fluid mb-3" alt="Responsive image"
                                 style="width: 50px; height: 50px;"> <br>
                             <small class="card-text mt-5 text-white">
@@ -48,7 +48,7 @@
                         </div>
                         @endif
                         @if ($p->swim_change)
-                        <div class="col-md-3 m-0 p-0">
+                        <div class="col-md-3 m-0 p-0 border-right border-success">
                             <img src="{{ asset('assets/img/swim.png') }}" class="img-fluid mb-3" alt="Responsive image"
                                 style="width: 50px; height: 50px;"> <br>
                             <small class="card-text mt-5 text-white">
@@ -57,7 +57,7 @@
                         </div>
                         @endif
                         @if ($p->slide_change)
-                        <div class="col-md-3 m-0 p-0">
+                        <div class="col-md-3 m-0 p-0 border-right border-success">
                             <img src="{{ asset('assets/img/slide.png') }}" class="img-fluid mb-3" alt="Responsive image"
                                 style="width: 50px; height: 50px;"> <br>
                             <small class="card-text mt-5 text-white">
@@ -67,7 +67,7 @@
                         @endif
                     </div>
                     <hr style="border: #41AB5D 1px solid;">
-                    <h4 class="float-left mt-1">IDR. {{ $p->price }}</h4>
+                    <h4 class="float-left mt-1">{{ $p->price }}/pax</h4>
                     <a href="{{ route('package-tour-detail', $p->id) }}" class="btn btn-success float-right">
                         Detail Package
                     </a>

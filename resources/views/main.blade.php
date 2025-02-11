@@ -37,7 +37,7 @@
     <h1 class="text-center mt-5">About</h1>
     <div class="row mt-5">
         <div class="col-md-6 mt-5">
-            <h2 class="mb-4">Get ready for an unforgettable adventure</h2>
+            <h2 class="mb-4">Get ready for an unforgettable "The Real Canyoning Adventure"</h2>
             <p>Let us take you on an adventure through stunning Baturraden landscapes.</p>
             <ul class="list-unstyled">
                 <li class="mb-2">
@@ -80,7 +80,7 @@
             <div class="col-md-4 mb-1">
                 <div class="card mb-0" style="background-image: url('{{ asset('assets/img/background.jpg') }}');">
                     <div class="card-body" style="z-index: 2;">
-                        <h1 class="card-title">{{ $p->name }}</h1>
+                        <h2 class="card-title">{{ $p->name }}</h2>
                         <hr style="border: red 1px solid;">
                         <p class="card-text text-white"><b>Location:</b> {{ $p->location }}</p>
                         <p class="card-text text-white"><b>Level:</b> {{ $p->level }}</p>
@@ -103,7 +103,7 @@
                         </div>
                         <div class="row">
                             @if ($p->swing_change)
-                                <div class="col-md-3 m-0 p-0">
+                                <div class="col-md-3 m-0 p-0 border-right border-success">
                                     <img src="{{ asset('assets/img/swing.png') }}" class="img-fluid mb-3" alt="Responsive image" style="width: 50px; height: 50px;"> <br>
                                     <small class="card-text mt-5 text-white">
                                         {{ $p->swing_change }}
@@ -111,7 +111,7 @@
                                 </div>
                             @endif
                             @if ($p->jump_change)
-                                <div class="col-md-3 m-0 p-0">
+                                <div class="col-md-3 m-0 p-0 border-right border-success">
                                     <img src="{{ asset('assets/img/jump.png') }}" class="img-fluid mb-3" alt="Responsive image" style="width: 50px; height: 50px;"> <br>
                                     <small class="card-text mt-5 text-white">
                                         {{ $p->jump_change }}
@@ -119,7 +119,7 @@
                                 </div>
                             @endif
                             @if ($p->swim_change)
-                                <div class="col-md-3 m-0 p-0">
+                                <div class="col-md-3 m-0 p-0 border-right border-success">
                                     <img src="{{ asset('assets/img/swim.png') }}" class="img-fluid mb-3" alt="Responsive image" style="width: 50px; height: 50px;"> <br>
                                     <small class="card-text mt-5 text-white">
                                         {{ $p->swim_change }}
@@ -127,7 +127,7 @@
                                 </div>
                             @endif
                             @if ($p->slide_change)
-                                <div class="col-md-3 m-0 p-0">
+                                <div class="col-md-3 m-0 p-0 border-right border-success">
                                     <img src="{{ asset('assets/img/slide.png') }}" class="img-fluid mb-3" alt="Responsive image" style="width: 50px; height: 50px;"> <br>
                                     <small class="card-text mt-5 text-white">
                                         {{ $p->slide_change }}
@@ -147,6 +147,13 @@
             </a>
         </div>
     </div>
+</div>
+
+<div class="container-fluid">
+    <iframe
+        src="https://youtube.com/embed/36TEuXajmUE?controls=1"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 
 <div class="parallax-section mt-5">

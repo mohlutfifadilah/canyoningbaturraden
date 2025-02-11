@@ -1,6 +1,6 @@
 <nav id="{{ Request::segment(1) === null ? 'navbar-main' : 'navbar' }}" class="{{ Request::segment(1) === null ? ' navbar navbar-main' : 'navbar navbar-child' }} navbar-expand-lg navbar-dark">
     <div class="container">
-        <a class="navbar-brand" href="/"><img src="{{ asset('logo.png') }}" alt="Logo"></a>
+        <a class="navbar-brand" href="/"><img src="{{ asset('logo.png') }}" alt="Logo"></a> <span class="mt-1 text-white">The Real Canyoning Adventure</span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
