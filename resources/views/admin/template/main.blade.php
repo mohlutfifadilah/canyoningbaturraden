@@ -124,6 +124,25 @@
             }
         });
     }
+
+    const rupiah = document.getElementById("rupiahInput");
+
+    rupiah.addEventListener("input", function (e) {
+    let value = this.value;
+
+    // Hapus semua karakter selain angka
+    value = value.replace(/[^0-9]/g, "");
+
+    // Tambahkan format Rupiah
+    this.value = formatRupiah(value);
+    });
+
+    function formatRupiah(angka) {
+    if (!angka) return "";
+
+    // Tambahkan tanda "Rp" dan format ribuan
+    return "Rp " + angka.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
 </script>
 </body>
 </html>

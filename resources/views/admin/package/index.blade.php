@@ -55,7 +55,7 @@
                                                 No Photos yet
                                             @endif
                                         </td>
-                                        <td>{{ $p->name }}</td>
+                                        <td>{{ $p->name }} <br> ({{ $p->price }})</td>
                                         <td>{{ $p->location }}</td>
                                         <td>
                                             <ul>

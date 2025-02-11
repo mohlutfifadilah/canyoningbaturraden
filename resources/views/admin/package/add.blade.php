@@ -61,27 +61,51 @@
                                     @endif
                                     <br>
                                     <small class="text-muted text-danger">
-                                        * Dimension : 433 x 577 <br>
+                                        * Dimension : 1067 x 755 <br>
                                         * Max size 2mb (jpeg, jpg, png) <br>
                                     </small>
                                 </div>
-                                <div class="form-group">
-                                    <label for="name">
-                                        Package Name
-                                    </label>
-                                    <input type="text"
-                                        class="form-control form-control-border @if(session('name')) is-invalid @endif @error('name') is-invalid @enderror"
-                                        id="name" name="name" value="{{ old('name') }}">
-                                    @error('name')
-                                    <small id="name" class="text-danger">
-                                        {{ $message }}
-                                    </small>
-                                    @enderror
-                                    @if (session('name'))
-                                    <small id="name" class="text-danger">
-                                        {{ session('name') }}
-                                    </small>
-                                    @endif
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="name">
+                                                Package Name
+                                            </label>
+                                            <input type="text"
+                                                class="form-control form-control-border @if(session('name')) is-invalid @endif @error('name') is-invalid @enderror"
+                                                id="name" name="name" value="{{ old('name') }}">
+                                            @error('name')
+                                            <small id="name" class="text-danger">
+                                                {{ $message }}
+                                            </small>
+                                            @enderror
+                                            @if (session('name'))
+                                            <small id="name" class="text-danger">
+                                                {{ session('name') }}
+                                            </small>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="price">
+                                                Price
+                                            </label>
+                                            <input type="text"
+                                                class="form-control form-control-border @if(session('price')) is-invalid @endif @error('price') is-invalid @enderror"
+                                                id="rupiahInput" name="price" value="{{ old('price') }}">
+                                            @error('price')
+                                            <small id="price" class="text-danger">
+                                                {{ $message }}
+                                            </small>
+                                            @enderror
+                                            @if (session('price'))
+                                            <small id="price" class="text-danger">
+                                                {{ session('price') }}
+                                            </small>
+                                            @endif
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-6">

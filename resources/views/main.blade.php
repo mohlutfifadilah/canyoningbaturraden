@@ -74,11 +74,11 @@
 </div>
 <div class="container-fluid package">
     <h1 class="text-center mt-5">Package</h1>
-    {{-- <p class="text-center">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> --}}
+    <p class="text-center">Most wanted package by others</p>
     <div class="row mt-5 mb-0">
         @foreach ($package as $p)
             <div class="col-md-4 mb-1">
-                <div class="card mb-0" style="background-image: url('{{ asset('storage/photo-package/' . $p->photo) }}');">
+                <div class="card mb-0" style="background-image: url('{{ asset('assets/img/background.jpg') }}');">
                     <div class="card-body" style="z-index: 2;">
                         <h1 class="card-title">{{ $p->name }}</h1>
                         <hr style="border: red 1px solid;">

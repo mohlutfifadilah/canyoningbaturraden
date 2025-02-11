@@ -20,8 +20,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('no_whatsapp', 255);
-            $table->string('instagram');
-            $table->string('tiktok');
+            $table->string('instagram', 255);
+            $table->string('tiktok', 255);
             $table->rememberToken();
             $table->timestamps();
         });

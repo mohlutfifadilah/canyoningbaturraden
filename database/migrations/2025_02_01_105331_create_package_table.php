@@ -32,6 +32,7 @@ return new class extends Migration
             $table->string('swim_change')->nullable();
             $table->longText('include')->nullable();
             $table->longText('description')->nullable();
+            $table->string('price', 255);
             $table->timestamps();
         });
     }

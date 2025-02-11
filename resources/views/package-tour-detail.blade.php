@@ -1,10 +1,13 @@
 @extends('template.main')
 @section('title', 'Detail | Canyoning Baturraden')
 @section('content')
-<div class="container package mb-4">
-    <div class="row mt-5 mb-0">
-        <div class="col-md-6 mb-1">
-            <div class="card mb-0" style="background-image: url('{{ asset('storage/photo-package/' . $package->photo) }}');">
+<div class="container-fluid package mb-4">
+    <div class="row mt-5 mb-1">
+        <div class="col-md-8">
+            <img src="{{ asset('storage/photo-package/' . $package->photo) }}" alt="">
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-0" style="background-image: url('{{ asset('assets/img/background.jpg') }}');">
                 <div class="card-body" style="z-index: 2;">
                     <h1 class="card-title">{{ $package->name }}</h1>
                     <hr style="border: red 1px solid;">
@@ -68,15 +71,15 @@
                     <hr style="border: #41AB5D 1px solid;">
                     <div class="row">
                         <div class="col">
-                            <a href=" " class="btn btn-success">
-                                Read more
+                            <a href="https://forms.gle/DFzVAbGhgw1u5Qu36" target="_blank" class="btn btn-danger btn-block">
+                                BOOK NOW
                             </a>
                         </div>
-                        {{-- <div class="col">
-                            <a href=" " class="btn btn-success">
-                                Read more
-                            </a>
-                        </div> --}}
+                        <div class="col">
+                            <h4 class="float-right mt-2">
+                                IDR. {{ $package->price }}
+                            </h4>
+                        </div>
                     </div>
                 </div>
             </div>

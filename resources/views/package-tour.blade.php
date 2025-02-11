@@ -5,7 +5,7 @@
     <div class="row mt-5 mb-0">
         @foreach ($package as $p)
         <div class="col-md-4 mb-1">
-            <div class="card mb-0" style="background-image: url('{{ asset('storage/photo-package/' . $p->photo) }}');">
+            <div class="card mb-0" style="background-image: url('{{ asset('assets/img/background.jpg') }}');">
                 <div class="card-body" style="z-index: 2;">
                     <h1 class="card-title">{{ $p->name }}</h1>
                     <hr style="border: red 1px solid;">
@@ -67,7 +67,8 @@
                         @endif
                     </div>
                     <hr style="border: #41AB5D 1px solid;">
-                    <a href="{{ route('package-tour-detail', $p->id) }}" class="btn btn-success">
+                    <h4 class="float-left mt-1">IDR. {{ $p->price }}</h4>
+                    <a href="{{ route('package-tour-detail', $p->id) }}" class="btn btn-success float-right">
                         Detail Package
                     </a>
                 </div>
